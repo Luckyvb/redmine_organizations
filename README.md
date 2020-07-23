@@ -1,4 +1,4 @@
-Remine Organizations
+Redmine Organizations
 ====================
 Organizations management to Redmine
 

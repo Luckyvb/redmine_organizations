@@ -1,0 +1,24 @@
+ru:
+  project_module_redmine_organizations: "Организации"
+  organization:
+    title:
+      one: "Организация"
+      other: "Организации"
+    action:
+      new:
+        title: "Новая организация"
+        success: "Организация создана"
+      edit:
+        title: "Изменить организацию"
+        success: "Организация изменена"
+      delete:
+        title: "Удалить организацию"
+        success: "Успешно удалена"
+    attr:
+      id: "Id"
+      name: "Название"
+      site: "www"
+      parent: "Входит в состав"
+  data:
+    empty:
+      message: "Нет данных для отображения."

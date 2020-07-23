@@ -1,0 +1,24 @@
+en:
+  project_module_redmine_orgnizations: "Orgnizations"
+  organization:
+    title:
+      one: "Organization"
+      other: "Organizations"
+    action:
+      new:
+        title: "New organization"
+        sussess: "Organization created"
+      edit:
+        title: "Edit organization"
+        sussess: "Organization changed"
+      delete:
+        title: "Delete organization"
+        sussess: "Organization deleted"
+    attr:
+      id: "Id"
+      name: "Name"
+      site: "www"
+      parent: "Part of"
+  data:
+    empty:
+      message: "No data to display."

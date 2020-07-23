@@ -1,0 +1,9 @@
+<%= labelled_form_for organization, url: { controller: :organizations, action: action } do |f| %>
+  <div class='box tabular'>
+    <p><%= f.select(:parent_id, options_for_select(Organization.accessible.where.not(id: params[:id]).map { |a| [a.name, a.id] }, organization.parent_id), :label => t('organization.attr.parent')) %></p>
+    <p><%= f.text_field :name, :label => t('organization.attr.name') %></p>
+    <p><%= f.text_field :site, :label => t('organization.attr.site') %></p>
+  </div>
+
+  <%= f.submit t('button_save') %>
+<% end %>

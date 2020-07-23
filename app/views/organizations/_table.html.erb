@@ -1,0 +1,29 @@
+<table class="list">
+  <thead>
+    <tr>
+      <th><%= t('organization.attr.parent') %></th>
+      <th><%= t('organization.attr.name') %></th>
+      <th><%= t('organization.attr.site') %></th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% organizations.each do |o| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= link_to o.parent.name, {:controller => 'organizations', :action => 'show', :id => o.parent_id}, :class => 'fas fa-info-circle' unless o.parent_id.blank? %></td>
+      <td><%= o.name %></td>
+      <td><%= link_to o.site, title: o.site do content_tag(:i, '', class: 'fa fa-globe') end unless o.site.blank? %></td>
+      <td class="action">
+        <%= link_to l(:button_edit),
+                            {:controller => 'organizations', :action => 'edit', :id => o.id},
+                            :class => 'icon icon-only icon-edit', :title => l(:button_edit),
+                            :accesskey => accesskey(:edit),
+                            :onclick => 'Element.show("edit-organizations"); return false;' %>
+      </td>
+      <td class="action">
+        <%= delete_link({ :controller => 'organizations', :action => 'destroy', :id => o.id}, class: 'icon icon-only icon-del', title: l(:button_delete)) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,12 @@
+<% if User.current.allowed_to?(:view_catalogs, nil, :global => true) %>
+  <div class="contextual">
+    <%= link_to(t('organization.action.new.title'), {:controller => 'organizations', :action => 'new'}, :class => 'icon icon-add') %>
+    <%= link_to(t('catalog.title', count: 2), {:controller => 'catalogs', :action => 'index'}, :class => 'icon icon-list') if User.current.allowed_to?(:view_catalogs, nil, :global => true) %>
+  </div>
+
+  <h2><%= t('organization.title', count: 2) %></h2>
+
+  <%= render partial: 'table', locals: { organizations: @organizations } %>
+<% else %>
+  <p class="nodata"><%=t('permission.denied.message')%></p>
+<% end %>

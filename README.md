@@ -10,7 +10,7 @@ Installation
 Change to redmine/plugins folder and run:
 ```
 bash
-git clone https://github.com/redmine_organization.git
+git clone https://github.com/redmine_organization.git organizations
 ```
 
 Tested with...
